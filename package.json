@@ -1,0 +1,27 @@
+{
+  "name": "errordev",
+  "version": "0.1.0",
+  "description": "error development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arifams/errordev.git"
+  },
+  "author": "arifams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arifams/errordev/issues"
+  },
+  "homepage": "https://github.com/arifams/errordev#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongodb": "^2.2.30"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
