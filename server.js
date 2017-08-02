@@ -24,11 +24,19 @@ app.use(bodyParser.urlencoded({extended: true}))
 // routing app.get(path, callback);
 
 app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/view/index.html')
-	var cursor = db.collection('quotes').find()
+	// mongodb collecting the quotes and translate it to array
+	db.collection('quotes').find().toArray((err, result) => {
+		if (err) return console.log(err)
+		// render index ejs
+		res.render('index.ejs', {quotes: result})
+	})
 })
 
 app.post('/quotes', (req, res) => {
+	db.collection('quotes').find().toArray(function(err, result) {
+		console.log(result)
+	})
+
 	db.collection('quotes').save(req.body, (err, result) => {
 		if (err) return console.log(err)
 
